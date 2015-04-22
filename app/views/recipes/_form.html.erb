@@ -9,14 +9,33 @@
       </ul>
     </div>
   <%end %>
-  <%= f.label :title, "Title" %>
-  <%= f.text_field :title %>
-  <br>
-  <%= f.label :description, "Description" %>
-  <%= f.text_area :description %>
-  <br>
-  <%= f.label :image, "Picture" %>
-  <%= f.file_field :image %>
-  <br>
+  <div class="field">
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description, "Description" %>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :image, "Picture" %>
+    <%= f.file_field :image %>
+  </div>
+  <h3>Ingredients</h3>
+  <div id="ingredients">
+    <% f.fields_for :ingredients do |ingredient| %>
+      <%= render 'ingredient_fields', f: ingredient %>
+      <%= link_to_add_association 'add ingredient', f, :ingredients %>
+    <% end %>
+  </div>
+
+  <h3>Ingredients</h3>
+  <div id="steps">
+    <% f.fields_for :steps do |step| %>
+      <%= render 'ingredient_fields', f: step %>
+      <%= link_to_add_association 'add step', f, :steps %>
+    <% end %>
+  </div>
+
   <%= f.submit "Submit" %>
 <% end %>
