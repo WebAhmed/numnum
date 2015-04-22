@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  http_basic_authenticate_with name: "ahmed", password: "nigma0726", except: :index
   before_action :find_recipe, only: [:show,:edit,:update,:destroy]
 
   def index
