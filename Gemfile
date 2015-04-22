@@ -13,7 +13,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'simple_form'
 gem 'paperclip'
-gem "cocoon"
+gem 'cocoon'
+gem 'bootstrap-sass'
 
 group :development, :test do
   gem 'sqlite3'
