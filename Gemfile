@@ -15,6 +15,8 @@ gem 'simple_form'
 gem 'paperclip'
 gem 'cocoon'
 gem 'bootstrap-sass'
+gem 'pry-rails'
+gem 'pry'
 
 group :development, :test do
   gem 'sqlite3'

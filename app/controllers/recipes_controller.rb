@@ -1,7 +1,6 @@
 class RecipesController < ApplicationController
   http_basic_authenticate_with name: "ahmed", password: "nigma0726", except: :index
   before_action :find_recipe, only: [:show,:edit,:update,:destroy]
-
   def index
     @recipes = Recipe.all.order("created_at DESC")
   end
@@ -46,7 +45,7 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:title, :description, :image, ingredients_attributes: [:id, :name, :_destroy], directions_attributes: [:id, :step, :_destroy])
+    params.require(:recipe).permit(:title,:description,:image,ingredients_attributes: [:id, :name, :_destroy],directions_attributes: [:id, :step, :_destroy])
   end
 
 end
