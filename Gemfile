@@ -17,6 +17,7 @@ gem 'cocoon'
 gem 'bootstrap-sass'
 gem 'pry-rails'
 gem 'pry'
+gem 'devise'
 
 group :development, :test do
   gem 'sqlite3'
